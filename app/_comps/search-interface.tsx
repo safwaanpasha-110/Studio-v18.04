@@ -371,7 +371,7 @@ export default function SearchInterface() {
   return (
     <div className="space-y-8 p-6">
       <div className="space-y-2">
-        <h1 className="text-3xl font-bold text-white">N:N Facial Recognition Search</h1>
+        <h1 className="text-3xl font-bold text-white">Facial Recognition Search</h1>
         <p className="text-gray-400">Upload images to search against the database of registered faces</p>
       </div>
 

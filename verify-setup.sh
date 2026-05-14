@@ -15,7 +15,7 @@ NC='\033[0m' # No Color
 
 # Check if we're in the right directory
 if [ ! -f "package.json" ]; then
-    echo -e "${RED}❌ Error: Not in optiexacta-studio directory${NC}"
+    echo -e "${RED}❌ Error: Not in frs-studio directory${NC}"
     exit 1
 fi
 

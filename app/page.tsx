@@ -29,15 +29,6 @@ export default function Home() {
             >
               Open Editor
             </Button>
-            <Button
-              disabled
-              variant="outline"
-              size="lg"
-              className="border-gray-600 text-gray-600 px-8 py-6 text-lg cursor-not-allowed opacity-50"
-              title="Coming soon"
-            >
-              N:N Search
-            </Button>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 pt-8 text-sm text-gray-400">

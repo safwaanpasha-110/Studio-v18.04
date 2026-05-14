@@ -36,18 +36,14 @@ export default function FinalPage() {
     name: string
     watchlistId: string
     comment?: string
-    lockerId?: string
-    firstName?: string
-    lastName?: string
-    phoneNumber?: string
   }) => {
     if (!imgData) return
-    
+
     setIsExportModalOpen(false)
-    
+
     try {
       console.log("Exporting to FRS:", exportData)
-      
+
       const response = await fetch('/api/frs/upload', {
         method: 'POST',
         headers: {
@@ -58,10 +54,6 @@ export default function FinalPage() {
           watchlistId: exportData.watchlistId,
           imageBase64: imgData,
           comment: exportData.comment,
-          lockerId: exportData.lockerId,
-          firstName: exportData.firstName,
-          lastName: exportData.lastName,
-          phoneNumber: exportData.phoneNumber
         })
       })
 
@@ -73,7 +65,7 @@ export default function FinalPage() {
       }
 
       console.log("Upload success:", result)
-      alert(`Successfully exported "${exportData.name}" to OptiExacta!\nCard ID: ${result.cardId}`)
+      alert(`Successfully exported "${exportData.name}" to FRS!\nCard ID: ${result.cardId}`)
       
     } catch (error) {
       console.error("Export error:", error)

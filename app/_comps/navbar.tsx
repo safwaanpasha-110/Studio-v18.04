@@ -26,9 +26,6 @@ export default function Navbar() {
           >
             Editor
           </Link>
-          <span className="text-gray-600 cursor-not-allowed" title="Coming soon">
-            N:N Search
-          </span>
         </div>
       </div>
     </nav>

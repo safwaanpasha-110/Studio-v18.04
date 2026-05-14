@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-const FRS_BASE_URL = process.env.NEXT_PUBLIC_FRS_BASE_URL || 'http://127.0.0.1:8000'
+const FRS_BASE_URL = process.env.NEXT_PUBLIC_FRS_BASE_URL
 const FRS_TOKEN = `Token ${process.env.NEXT_PUBLIC_FRS_TOKEN || ''}`
 
 // Configuration for concurrent processing
@@ -59,7 +59,7 @@ async function detectFaces(imageBase64: string, filename: string): Promise<Detec
     const buffer = Buffer.from(base64Data, 'base64')
     
     const formData = new FormData()
-    const blob = new Blob([buffer], { type: 'image/jpeg' })
+    const blob = new Blob([new Uint8Array(buffer)], { type: 'image/jpeg' })
     formData.append('photo', blob, filename)
     formData.append('attributes', JSON.stringify({
       face: {
