@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { createPortal } from "react-dom"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
@@ -80,11 +81,38 @@ export default function ExportModal({ isOpen, onClose, onExport }: ExportModalPr
     }
   }
 
-  if (!isOpen) return null
+  if (!isOpen || typeof window === "undefined") return null
 
-  return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-slate-800 border border-slate-700 rounded-lg p-6 max-w-md w-full space-y-4 max-h-[90vh] overflow-y-auto">
+  console.log("[ExportModal] rendering, isOpen=", isOpen)
+
+  return createPortal(
+    <div
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        backgroundColor: "rgba(0,0,0,0.6)",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        zIndex: 99999,
+      }}
+    >
+      <div
+        style={{
+          backgroundColor: "#1e293b",
+          border: "1px solid #334155",
+          borderRadius: "0.5rem",
+          padding: "1.5rem",
+          maxWidth: "28rem",
+          width: "100%",
+          maxHeight: "90vh",
+          overflowY: "auto",
+        }}
+        className="space-y-4"
+      >
         <h2 className="text-white font-bold text-lg">Enroll</h2>
 
         <div className="space-y-2">
@@ -159,6 +187,7 @@ export default function ExportModal({ isOpen, onClose, onExport }: ExportModalPr
           </Button>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   )
 }
