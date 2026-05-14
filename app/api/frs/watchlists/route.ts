@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server'
 
+export const dynamic = 'force-dynamic'
+
 const FRS_BASE_URL = process.env.NEXT_PUBLIC_FRS_BASE_URL
 const FRS_TOKEN = process.env.NEXT_PUBLIC_FRS_TOKEN || ''
 
