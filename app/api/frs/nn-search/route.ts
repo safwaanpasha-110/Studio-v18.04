@@ -308,12 +308,12 @@ async function getFaceObjects(cardId: number): Promise<FaceObject[]> {
 
 /**
  * Fetch all watchlists from the system
- * GET /permissions/watch-lists/
+ * GET /watch-lists/
  */
 async function fetchWatchlists(): Promise<Map<number, string>> {
   try {
     const response = await fetch(
-      `${FRS_BASE_URL}/permissions/watch-lists/`,
+      `${FRS_BASE_URL}/watch-lists/`,
       {
         headers: {
           'Accept': 'application/json',

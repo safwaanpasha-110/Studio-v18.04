@@ -5,7 +5,7 @@ const FRS_TOKEN = process.env.NEXT_PUBLIC_FRS_TOKEN || ''
 
 export async function GET() {
   try {
-    const response = await fetch(`${FRS_BASE_URL}/permissions/watch-lists/`, {
+    const response = await fetch(`${FRS_BASE_URL}/watch-lists/`, {
       method: 'GET',
       headers: {
         'Accept': 'application/json',
