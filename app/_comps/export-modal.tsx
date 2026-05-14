@@ -149,7 +149,7 @@ export default function ExportModal({ isOpen, onClose, onExport }: ExportModalPr
               <SelectTrigger className="bg-slate-700 border-slate-600 text-white">
                 <SelectValue placeholder="Select a watchlist" />
               </SelectTrigger>
-              <SelectContent className="bg-slate-700 border-slate-600">
+              <SelectContent className="bg-slate-700 border-slate-600 z-[100000]">
                 {watchlists.map((wl) => (
                   <SelectItem key={wl.id} value={wl.id.toString()}>
                     {wl.name}

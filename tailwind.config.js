@@ -14,6 +14,7 @@ module.exports = {
     "bg-opacity-50",
     "z-50",
     "z-[9999]",
+    "z-[100000]",
     "flex",
     "items-center",
     "justify-center",
