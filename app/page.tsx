@@ -17,7 +17,7 @@ export default function Home() {
               Image Enhancement Studio
             </h1>
             <p className="text-xl text-gray-300">
-              Professional tools for image enhancement and facial recognition search
+              Professional tools for image enhancement
             </p>
           </div>
 

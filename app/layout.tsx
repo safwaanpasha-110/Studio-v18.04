@@ -4,7 +4,7 @@ import "./globals.css"
 
 export const metadata: Metadata = {
   title: "Image Enhancement Studio",
-  description: "Professional image enhancement and facial recognition studio",
+  description: "Professional image enhancement studio",
 }
 
 export default function RootLayout({
